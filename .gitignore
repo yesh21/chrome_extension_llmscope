@@ -1,0 +1,11 @@
+fastapi/__pycache__/
+
+# files uploaded from extension
+files/
+
+.DS_Store
+
+icons/.DS_Store
+
+
+

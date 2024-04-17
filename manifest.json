@@ -1,0 +1,46 @@
+{
+    "name": "LLMScope",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "Run LLM locally and apply RAG within your browser",
+    "author": "Yaswanth",
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Local LLM bot",
+        "default_icon": "icons/icon.png"
+    },
+
+
+
+    "icons": {
+        "144": "icons/icon.png"
+    },
+
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "content_scripts": [{
+        "matches": [
+            "*://*/*"
+        ],
+        "js": [
+            "content.js"
+        ]
+    }],
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["icons/icon.png", "icons/motion-blur-2.svg", "icons/tubespinner.svg", "icons/close-stroke.svg"]
+    }],
+    "permissions": [
+        "webRequest",
+        "storage",
+        "background",
+        "tabs",
+        "activeTab",
+        "scripting"
+    ]
+
+}
